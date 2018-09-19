@@ -1,0 +1,1 @@
+{"class":"org.apache.spark.ml.feature.VectorAssembler","timestamp":1537186320004,"sparkVersion":"2.3.1","uid":"vecAssembler_0ac199fbbd5f","paramMap":{"outputCol":"features","inputCols":["time","FeaA","FeaB","FeaC","FeaD","FeaE"]}}
