@@ -1,0 +1,17 @@
+1) Briefly describe the conceptual approach you chose! What are the trade-offs?
+
+Ans: I did some quick analysis on the dataset using jupyter notebook and python. During the analysis i found that the classes are highly imbalanced, class 2 having the most data and class 4 having the least which will ultimately lead to overfitting and less generalized model. Next I did some quick prototyping there itself using xgboost and jupyter notebook. Finding the best Xgboost params for the final training using Spark and Scala. For multi class classification I used "multi:sofprob" objective in Xgboost. After getting F1 Score of 99.2% I finished up the prototyping. Then I created a Spark pipeline in scala and stored the model locally. Then I created a StreamClassifier which works datastream. I converted test.csv into data stream and feed it to the pipeline model via Custom Sink. Custom Sink binds the datastream with the model for prediction. After that i created a write Stream and printed the prediction on the console.
+
+Trade-offs: The model is still not generalised well even after balancing and resampling the classes. 
+            Even though Xgboost can handle null and zero by itself. Filling null with zero is not ideal.
+           
+
+2) What's the model performance?
+
+Ans: Model has the F1 score of 0.996 that comes out to be 99.6%.
+ 
+
+3) If you had more time, what improvements would you make, and in what order of priority?
+
+Ans: If I had more time I would have done more of Multivariate analysis in prototyping stage and try find out which time series it is and would have deal it with ARIMA and SARIMA models respectively. I would then gone for detecting the outliers and removing them. Then I would do feature engineering and resample some of the classes to balance them and prevent further overfitting and drop of accuracy. And finally I would have futher tuned some XgBoost parameters. 
+ 
